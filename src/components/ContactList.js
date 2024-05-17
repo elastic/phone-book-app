@@ -1,5 +1,6 @@
 // src/components/ContactList.js
 import React from "react";
+import "./ContactList.css";
 
 const ContactList = ({ contacts, onDelete, onEdit }) => {
   return (
@@ -7,7 +8,7 @@ const ContactList = ({ contacts, onDelete, onEdit }) => {
       {contacts.length === 0 ? (
         <p>No contacts available.</p>
       ) : (
-        <table>
+        <table className="contact-table">
           <thead>
             <tr>
               <th>First Name</th>
@@ -29,9 +30,8 @@ const ContactList = ({ contacts, onDelete, onEdit }) => {
                 <td>{contact.phoneNumber}</td>
                 <td>{contact.email}</td>
                 <td>
-                  {contact.address.street}, {contact.address.city},{" "}
-                  {contact.address.state}, {contact.address.postalCode},{" "}
-                  {contact.address.country}
+                  {contact.street}, {contact.city}, {contact.state},{" "}
+                  {contact.postalCode}, {contact.country}
                 </td>
                 <td>{contact.company}</td>
                 <td>{contact.jobTitle}</td>

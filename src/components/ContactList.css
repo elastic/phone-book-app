@@ -1,0 +1,29 @@
+/* src/components/ContactList.css */
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.contact-table th,
+.contact-table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.contact-table th {
+  background-color: #f4f4f4;
+}
+
+.contact-table td {
+  vertical-align: top;
+}
+
+.contact-table button {
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+  background-color: #007bff;
+  color: white;
+}
