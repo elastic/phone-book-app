@@ -11,7 +11,9 @@ const App = () => {
   const addOrUpdateContact = (contact) => {
     if (editingContact) {
       setContacts(
-        contacts.map((c) => (c.id === editingContact.id ? contact : c))
+        contacts.map((c) =>
+          c.id === editingContact.id ? { ...contact, id: editingContact.id } : c
+        )
       );
       setEditingContact(null);
     } else {
