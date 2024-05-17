@@ -26,4 +26,10 @@
   font-size: 0.9rem;
   background-color: #007bff;
   color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-table button:hover {
+  background-color: #0056b3;
 }

@@ -20,7 +20,8 @@
 }
 
 .form-row input,
-.form-row textarea {
+.form-row textarea,
+.form-row select {
   flex: 2;
   padding: 0.5rem;
   font-size: 1rem;

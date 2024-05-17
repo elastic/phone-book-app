@@ -1,8 +1,10 @@
 // src/components/ContactForm.js
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./ContactForm.css";
 
 const ContactForm = ({ onSave, contactToEdit }) => {
+  const { t } = useTranslation();
   const [contact, setContact] = useState({
     firstName: "",
     lastName: "",
@@ -17,12 +19,22 @@ const ContactForm = ({ onSave, contactToEdit }) => {
     jobTitle: "",
     notes: "",
   });
+  const [countries, setCountries] = useState([]);
 
   useEffect(() => {
     if (contactToEdit) {
       setContact(contactToEdit);
     }
   }, [contactToEdit]);
+
+  useEffect(() => {
+    fetch("https://restcountries.com/v3.1/all")
+      .then((response) => response.json())
+      .then((data) => {
+        const countryNames = data.map((country) => country.name.common).sort();
+        setCountries(countryNames);
+      });
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,7 +66,7 @@ const ContactForm = ({ onSave, contactToEdit }) => {
   return (
     <form onSubmit={handleSubmit} className="contact-form">
       <div className="form-row">
-        <label>First Name:</label>
+        <label>{t("firstName")}:</label>
         <input
           type="text"
           name="firstName"
@@ -63,11 +75,20 @@ const ContactForm = ({ onSave, contactToEdit }) => {
         />
       </div>
       <div className="form-row">
-        <label>Last Name:</label>
+        <label>{t("lastName")}:</label>
         <input
           type="text"
           name="lastName"
           value={contact.lastName}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="form-row">
+        <label>{t("street")}:</label>
+        <input
+          type="text"
+          name="street"
+          value={contact.street}
           onChange={handleChange}
         />
       </div>
@@ -86,15 +107,6 @@ const ContactForm = ({ onSave, contactToEdit }) => {
           type="email"
           name="email"
           value={contact.email}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="form-row">
-        <label>Street:</label>
-        <input
-          type="text"
-          name="street"
-          value={contact.street}
           onChange={handleChange}
         />
       </div>
@@ -127,12 +139,14 @@ const ContactForm = ({ onSave, contactToEdit }) => {
       </div>
       <div className="form-row">
         <label>Country:</label>
-        <input
-          type="text"
-          name="country"
-          value={contact.country}
-          onChange={handleChange}
-        />
+        <select name="country" value={contact.country} onChange={handleChange}>
+          <option value="">Select a country</option>
+          {countries.map((country) => (
+            <option key={country} value={country}>
+              {country}
+            </option>
+          ))}
+        </select>
       </div>
       <div className="form-row">
         <label>Company:</label>
