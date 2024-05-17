@@ -13,12 +13,6 @@ const ContactList = ({ contacts, onDelete, onEdit }) => {
             <tr>
               <th>First Name</th>
               <th>Last Name</th>
-              <th>Phone Number</th>
-              <th>Email</th>
-              <th>Address</th>
-              <th>Company</th>
-              <th>Job Title</th>
-              <th>Notes</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -27,15 +21,6 @@ const ContactList = ({ contacts, onDelete, onEdit }) => {
               <tr key={contact.id}>
                 <td>{contact.firstName}</td>
                 <td>{contact.lastName}</td>
-                <td>{contact.phoneNumber}</td>
-                <td>{contact.email}</td>
-                <td>
-                  {contact.street}, {contact.city}, {contact.state},{" "}
-                  {contact.postalCode}, {contact.country}
-                </td>
-                <td>{contact.company}</td>
-                <td>{contact.jobTitle}</td>
-                <td>{contact.notes}</td>
                 <td>
                   <button onClick={() => onEdit(contact)}>Edit</button>
                   <button onClick={() => onDelete(contact.id)}>Delete</button>
