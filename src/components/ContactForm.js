@@ -107,7 +107,7 @@ const ContactForm = ({ onSave, contactToEdit }) => {
       <div className="form-row">
         <label>Email:</label>
         <input
-          type="email"
+          type="text"
           name="email"
           value={contact.email}
           onChange={handleChange}
