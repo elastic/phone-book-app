@@ -31,10 +31,10 @@ const ContactList = ({ contacts, onDelete, onEdit }) => {
                 <td>{contact.email}</td>
                 <td>
                   {contact.street}, {contact.city}, {contact.state},{" "}
-                  {contact.postalCode}, {contact.country}
+                  {contact.postal_code}, {contact.country}
                 </td>
                 <td>{contact.company}</td>
-                <td>{contact.jobTitle}</td>
+                <td>{contact.job_title}</td>
                 <td>{contact.notes}</td>
                 <td>
                   <button onClick={() => onEdit(contact)}>Edit</button>

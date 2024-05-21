@@ -13,10 +13,10 @@ const ContactForm = ({ onSave, contactToEdit }) => {
     street: "",
     city: "",
     state: "",
-    postalCode: "",
+    postal_code: "",
     country: "",
     company: "",
-    jobTitle: "",
+    job_title: "",
     notes: "",
   });
   const [countries, setCountries] = useState([]);
@@ -55,10 +55,10 @@ const ContactForm = ({ onSave, contactToEdit }) => {
       street: "",
       city: "",
       state: "",
-      postalCode: "",
+      postal_code: "",
       country: "",
       company: "",
-      jobTitle: "",
+      job_title: "",
       notes: "",
     });
   };
@@ -135,8 +135,8 @@ const ContactForm = ({ onSave, contactToEdit }) => {
         <label>Postal Code:</label>
         <input
           type="text"
-          name="postalCode"
-          value={contact.postalCode}
+          name="postal_code"
+          value={contact.postal_code}
           onChange={handleChange}
         />
       </div>
@@ -165,8 +165,8 @@ const ContactForm = ({ onSave, contactToEdit }) => {
         <label>Job Title:</label>
         <input
           type="text"
-          name="jobTitle"
-          value={contact.jobTitle}
+          name="job_title"
+          value={contact.job_title}
           onChange={handleChange}
         />
       </div>
