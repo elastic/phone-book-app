@@ -8,6 +8,7 @@ const resources = {
     translation: {
       firstName: "First Name",
       lastName: "Last Name",
+      street: "Street",
       // Other translations can go here
     },
   },
@@ -15,6 +16,7 @@ const resources = {
     translation: {
       firstName: "Nombre",
       lastName: "Apellido",
+      street: "Calle",
       // Other translations can go here
     },
   },
