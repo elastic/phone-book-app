@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import "./ContactForm.css";
 
 const ContactForm = ({ onSave, contactToEdit }) => {
-  const { t } = useTranslation();
+  const { t: translate } = useTranslation();
   const [contact, setContact] = useState({
     firstName: "",
     lastName: "",
@@ -69,7 +69,7 @@ const ContactForm = ({ onSave, contactToEdit }) => {
   return (
     <form onSubmit={handleSubmit} className="contact-form">
       <div className="form-row">
-        <label>{t("firstName")}:</label>
+        <label>{translate("firstName")}:</label>
         <input
           type="text"
           name="firstName"
@@ -78,7 +78,7 @@ const ContactForm = ({ onSave, contactToEdit }) => {
         />
       </div>
       <div className="form-row">
-        <label>{t("lastName")}:</label>
+        <label>{translate("lastName")}:</label>
         <input
           type="text"
           name="lastName"
@@ -87,7 +87,7 @@ const ContactForm = ({ onSave, contactToEdit }) => {
         />
       </div>
       <div className="form-row">
-        <label>{t("street")}:</label>
+        <label>{translate("street")}:</label>
         <input
           type="text"
           name="street"
