@@ -129,6 +129,8 @@ const ContactForm = ({ onSave, contactToEdit }) => {
           name="state"
           value={contact.state}
           onChange={handleChange}
+          pattern="[A-Za-z0-9]+"
+          title="State name should only contain letters"
         />
       </div>
       <div className="form-row">
